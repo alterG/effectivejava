@@ -3,7 +3,8 @@ package varargs;
 public class Main {
 
     public static void main(String[] args) {
-        printArr(1,2,3,4,5);
+
+        printArr(new int[]{6,7,8});
     }
 
     public static void printArr(int... args) {
