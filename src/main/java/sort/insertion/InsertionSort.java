@@ -1,20 +1,22 @@
 package sort.insertion;
 
 import sort.Sortable;
-import sort.Utils;
 
-public class InsertionSort implements Sortable {
+/**
+ * Complexity O(N^2), footprint O(1)
+ */
+public class InsertionSort implements Sortable{
 
     @Override
     public void sort(int[] a) {
-        for (int i = 0; i < a.length - 1; i++) {
-            int min = i;
-            for (int j = i + 1; j < a.length; j++) {
-                if (a[min] > a[j]) {
-                    min = j;
-                }
+        for (int i = 1; i < a.length; i++) {
+            int temp = a[i];
+            int j = i;
+            while (j > 0 && a[j - 1] > temp) {
+                    a[j] = a[j - 1];
+                    j--;
             }
-            Utils.swap(a, i, min);
+            a[j] = temp;
         }
     }
 }

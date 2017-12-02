@@ -3,20 +3,23 @@ package sort.bubble;
 
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import sort.Sortable;
 import sort.insertion.InsertionSort;
+import sort.merge.MergeSort;
+import sort.selection.SelectionSort;
 
 import java.util.Arrays;
 import java.util.Random;
 
-public class BubbleSortTest{
+public class SortTest {
     public static final int ARR_LENGTH = 50;
     private int[] arr = new int[ARR_LENGTH];
     private int[] expectedArr = new int[ARR_LENGTH];
 //    private Sortable sortObj = new BubbleSort();
-    private Sortable sortObj = new InsertionSort();
+//    private Sortable sortObj = new SelectionSort();
+//    private Sortable sortObj = new InsertionSort();
+    private Sortable sortObj = new MergeSort();
 
     @Before
     public void init() {
@@ -31,7 +34,9 @@ public class BubbleSortTest{
 
     @Test
     public void sort() {
+        System.out.println(Arrays.toString(arr));
         sortObj.sort(arr);
+        System.out.println(Arrays.toString(arr));
         Assert.assertArrayEquals(expectedArr, arr);
     }
 }
