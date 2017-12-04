@@ -7,6 +7,7 @@ import org.junit.Test;
 import sort.Sortable;
 import sort.insertion.InsertionSort;
 import sort.merge.MergeSort;
+import sort.quick.QuickSort;
 import sort.selection.SelectionSort;
 import sort.shell.ShellSort;
 
@@ -21,7 +22,8 @@ public class SortTest {
 //    private Sortable sortObj = new SelectionSort();
 //    private Sortable sortObj = new InsertionSort();
 //    private Sortable sortObj = new MergeSort();
-    private Sortable sortObj = new ShellSort();
+//    private Sortable sortObj = new ShellSort();
+    private Sortable sortObj = new QuickSort();
 
     @Before
     public void init() {
