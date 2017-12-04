@@ -2,6 +2,9 @@ package sort.merge;
 
 import sort.Sortable;
 
+/**
+ * Complexity O(N*logN), footprint O(N)
+ */
 public class MergeSort implements Sortable {
     int[] workspace;
 

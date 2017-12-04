@@ -8,6 +8,7 @@ import sort.Sortable;
 import sort.insertion.InsertionSort;
 import sort.merge.MergeSort;
 import sort.selection.SelectionSort;
+import sort.shell.ShellSort;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -19,7 +20,8 @@ public class SortTest {
 //    private Sortable sortObj = new BubbleSort();
 //    private Sortable sortObj = new SelectionSort();
 //    private Sortable sortObj = new InsertionSort();
-    private Sortable sortObj = new MergeSort();
+//    private Sortable sortObj = new MergeSort();
+    private Sortable sortObj = new ShellSort();
 
     @Before
     public void init() {
