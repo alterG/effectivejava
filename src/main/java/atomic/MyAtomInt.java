@@ -1,5 +1,8 @@
 package atomic;
 
+import lombok.Getter;
+
+@Getter
 public class MyAtomInt {
 
     int value;
@@ -12,7 +15,7 @@ public class MyAtomInt {
         return false;
     }
 
-    private final int incAndGet() {
+    public final int incAndGet() {
         while (true) {
             int current = value;
             int next = current + 1;
@@ -22,7 +25,7 @@ public class MyAtomInt {
         }
     }
 
-    private final int getAndInc() {
+    public final int getAndInc() {
         while (true) {
             int current = value;
             int next = current + 1;

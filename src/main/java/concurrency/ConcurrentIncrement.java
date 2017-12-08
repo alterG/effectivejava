@@ -2,17 +2,19 @@ package concurrency;
 
 import java.util.HashSet;
 import java.util.Set;
-import java.util.concurrent.Semaphore;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class ConcurrentIncrement {
 
-    private static volatile int value = 0;
-    private static Semaphore sem = new Semaphore(1);
+    private static AtomicInteger value = new AtomicInteger();
+//    private static Semaphore sem = new Semaphore(1);
 
-    private static void next() throws InterruptedException {
-        sem.acquire();
-        value++;
-        sem.release();
+    private static
+        // synchronized
+    void next() {
+//        sem.acquire();
+        value.incrementAndGet();
+//        sem.release();
     }
 
     public static void main(String[] args) throws InterruptedException {
@@ -21,11 +23,11 @@ public class ConcurrentIncrement {
         for (int i = 0; i < 10; i++) {
             Thread thread = new Thread(() -> {
                 for (int j = 0; j < 1000; j++) {
-                    try {
+//                    try {
                         next();
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
                 }
             });
             thread.start();
